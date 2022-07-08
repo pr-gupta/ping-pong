@@ -1,9 +1,12 @@
 import threading
 import turtle
 import os
+import winsound
+from concurrent.futures import ThreadPoolExecutor
 
 lock1 = threading.Lock()
 lock2 = threading.Lock()
+executor = ThreadPoolExecutor(5)
 
 
 def setup_screen():
@@ -17,7 +20,8 @@ def setup_screen():
 
 
 def play_sound():
-    os.system("afplay bounce.wav&")
+    executor.submit(lambda: winsound.PlaySound('bounce.wav', winsound.SND_FILENAME))
+    # os.system("afplay bounce.wav&")
 
 
 def move_up(shape):

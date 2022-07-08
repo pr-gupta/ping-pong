@@ -30,8 +30,8 @@ ball.shape("circle")
 ball.color("red")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = 3
-ball.dy = 3
+ball.dx = 0.05
+ball.dy = 0.05
 
 # Pen
 pen = turtle.Turtle()
